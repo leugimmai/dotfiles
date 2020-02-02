@@ -1,5 +1,5 @@
-# AWS Okta Login aliases
-alias aws-glue-prod="ramsey login --profile glue_prod --save"
-alias aws-glue-test="ramsey login --profile glue_test --save"
-
 # https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+alias ls="ls -l"
