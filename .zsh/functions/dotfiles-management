@@ -1,0 +1,4 @@
+function dotfiles-add(){
+	cp $1 $HOME/Development/dotfiles/$1
+	echo "added $1 to dotfiles"
+}
