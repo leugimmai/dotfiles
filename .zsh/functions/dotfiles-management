@@ -2,3 +2,11 @@ function dotfiles-add(){
 	cp $1 $HOME/Development/dotfiles/$1
 	echo "added $1 to dotfiles"
 }
+
+function dotfiles-push(){
+	cd $HOME/Development/dotfiles
+	git add .
+	git commit -m "$1"
+	git push
+	cd ~
+}
