@@ -1,0 +1,32 @@
+function aws-login(){
+
+    echo "Choose an AWS profile:"
+    echo "=== Test - lampogroup ===="
+    echo "\t[0] Developer"
+    echo "\t[1] Glue"
+    echo "\t[2] PS-SSOLMT"
+    echo "\t[3] SSOLMT-Devs"
+    echo "=== QA - lampogroup ======"
+    echo "\t[4] PS-SSOLMT"
+    echo "\t[5] SSOLMT-Devs"
+    echo "=== Prod - lampogroup ===="
+    echo "\t[6] Glue"
+    echo "\t[7] PS-SSOLMT"
+    echo "\t[8] SSOLMT-Devs"
+    echo "\n"
+    echo -n "Choose a profile: " 
+    read value
+    
+    case $value in
+        0) eval "ramsey login --profile adfs_developer_test --save";;
+        1) eval "ramsey login --profile glue_test --save";;
+        2) eval "ramsey login --profile test_ps_ssolmt --save";;
+        3) eval "ramsey login --profile test_ssolmt_devs --save";;
+        4) eval "ramsey login --profile test_ps_ssolmt --save";;
+        5) eval "ramsey login --profile qa_ssolmt_devs --save";;
+        6) eval "ramsey login --profile glue_prod --save";;
+        7) eval "ramsey login --profile prod_ps_ssolmt --save";;
+        8) eval "ramsey login --profile prod_ssolmt_devs --save";;
+        *) echo "Invalid Option";;
+    esac
+}
