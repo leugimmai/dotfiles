@@ -1,9 +1,9 @@
-function dfa(){
+function dotfiles-add(){
 	cp $1 $HOME/Development/dotfiles/$1
 	echo "copied $1 to dotfiles"
 }
 
-function dfs(){
+function dotfiles-status(){
 	echo "Your dotfiles status:"
 	cd $HOME/Development/dotfiles
 	git status
@@ -11,7 +11,7 @@ function dfs(){
 }
 
 
-function dfp(){
+function dotfiles-push(){
 	cd $HOME/Development/dotfiles
 	git add .
 	git commit -m "$1"
