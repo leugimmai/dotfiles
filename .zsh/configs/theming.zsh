@@ -1,1 +1,1 @@
-ZSH_THEME="robbyrussell"
+ZSH_THEME="pi"
