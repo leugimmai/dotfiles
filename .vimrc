@@ -12,3 +12,8 @@ set foldlevelstart=10
 set laststatus=2
 
 map <C-n> :NERDTreeToggle<cr>
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
