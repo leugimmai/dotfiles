@@ -10,6 +10,7 @@ set hlsearch
 set foldenable
 set foldlevelstart=10
 set laststatus=2
+nnoremap <CR> :nohlsearch<CR><CR>
 
 let NERDTreeShowHidden=1
 
