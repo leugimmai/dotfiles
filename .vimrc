@@ -13,7 +13,7 @@ set laststatus=2
 nnoremap <CR> :nohlsearch<CR><CR>
 
 let NERDTreeShowHidden=1
-
+set ma
 map <C-n> :NERDTreeToggle<cr>
 
 noremap <Up> <Nop>
