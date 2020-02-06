@@ -32,3 +32,38 @@ augroup myvimrchooks
     au!
     autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
+
+set autochdir
+let NERDTreeChDirMode=2
+
+
+autocmd FileType nerdtree let t:nerdtree_winnr = bufwinnr('%')
+autocmd BufWinEnter * call PreventBuffersInNERDTree()
+
+function! PreventBuffersInNERDTree()
+  if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree'
+    \ && exists('t:nerdtree_winnr') && bufwinnr('%') == t:nerdtree_winnr
+    \ && &buftype == '' && !exists('g:launching_fzf')
+    let bufnum = bufnr('%')
+    close
+    exe 'b ' . bufnum
+    call ToggleNerdTree()
+  endif
+endfunction
+
+
+function NotNerdTreePane()
+  return bufname('%') !~# 'NERD_tree_' && winnr("$") > 1 && strlen(expand('%')) > 0 && &modifiable && exists("g:NERDTree")
+endfunction
+
+function ToggleNerdTree()
+  if g:NERDTree.IsOpen()
+    :NERDTreeClose
+  else
+    :NERDTreeFind
+  endif
+endfunction
+
+autocmd BufEnter *  if (NotNerdTreePane() && g:NERDTree.IsOpen()) | NERDTreeFind | wincmd p | endif
+autocmd SessionLoadPost * if (NotNerdTreePane() && !g:NERDTree.IsOpen()) | NERDTreeFind | wincmd p | endif
+autocmd VimLeave * NERDTreeClose
