@@ -11,6 +11,8 @@ set foldenable
 set foldlevelstart=10
 set laststatus=2
 
+let NERDTreeShowHidden=1
+
 map <C-n> :NERDTreeToggle<cr>
 
 noremap <Up> <Nop>
