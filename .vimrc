@@ -67,3 +67,6 @@ endfunction
 autocmd BufEnter *  if (NotNerdTreePane() && g:NERDTree.IsOpen()) | NERDTreeFind | wincmd p | endif
 autocmd SessionLoadPost * if (NotNerdTreePane() && !g:NERDTree.IsOpen()) | NERDTreeFind | wincmd p | endif
 autocmd VimLeave * NERDTreeClose
+
+nnoremap <C-j> gt
+nnoremap <C-k> gT
