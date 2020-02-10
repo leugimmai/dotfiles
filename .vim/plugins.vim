@@ -3,7 +3,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'morhetz/gruvbox'
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'tpope/vim-endwise'
 	Plug 'tomtom/tcomment_vim'
+	Plug '907th/vim-auto-save'
+	Plug 'sickill/vim-monokai'
+	Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
