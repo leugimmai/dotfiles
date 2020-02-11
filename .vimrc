@@ -4,10 +4,13 @@ set nocompatible
 so ~/.vim/plugins.vim
 
 syntax on
+<<<<<<< HEAD
 
 
 let mapleader = ","
 
+=======
+>>>>>>> e3c8efec1cb786ca7084b2b479e9f653e4091d37
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
 set backspace=indent,eol,start
@@ -26,18 +29,41 @@ set smarttab      " insert tabs on the start of a line according to
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
 
+<<<<<<< HEAD
+=======
+nnoremap <CR> :nohlsearch<CR><CR>
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+>>>>>>> e3c8efec1cb786ca7084b2b479e9f653e4091d37
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+<<<<<<< HEAD
 set ma
 set mouse=a
 map <C-n> :NERDTreeToggle<cr>
 
 
 colorscheme Tomorrow-Night
+=======
+
+map <C-n> :NERDTreeToggle<cr>
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+colorscheme gruvbox
+>>>>>>> e3c8efec1cb786ca7084b2b479e9f653e4091d37
 
 "Reloads vim when there is a change in the vimrc file without having to reload
 augroup myvimrchooks
@@ -48,6 +74,7 @@ augroup END
 set autochdir
 let NERDTreeChDirMode=2
 
+<<<<<<< HEAD
 
 function! PreventBuffersInNERDTree()
   if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree'
@@ -85,5 +112,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 
+=======
+>>>>>>> e3c8efec1cb786ca7084b2b479e9f653e4091d37
 nnoremap <C-j> gt
-nnoremap <C-k> gT
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_silent = 1 "do not display the auto-save notification
+
+autocmd vimenter * silent! lcd %:p:h
