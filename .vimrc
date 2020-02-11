@@ -35,6 +35,7 @@ set noerrorbells         " don't beep
 set ma
 set mouse=a
 
+"
 " Quick Save
 nnoremap <S-s> :w<CR>
 
@@ -96,3 +97,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeQuitOnOpen=1

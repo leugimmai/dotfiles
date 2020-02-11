@@ -9,4 +9,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sickill/vim-monokai'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-commentary'
+	Plug 'mxw/vim-jsx'
+	Plug 'othree/yajs.vim'
 call plug#end()
+
