@@ -12,5 +12,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-commentary'
 	Plug 'mxw/vim-jsx'
 	Plug 'othree/yajs.vim'
+	Plug 'tpope/vim-endwise'
+	Plug 'alvan/vim-closetag'
 call plug#end()
 
