@@ -34,7 +34,6 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set ma
 set mouse=a
-map <C-n> :NERDTreeToggle<cr>
 
 " Quick Save
 nnoremap <S-s> :w<CR>
@@ -43,6 +42,11 @@ colorscheme Tomorrow-Night
 
 " Toggle Relative Number
 nnoremap <silent> <leader>nb :set relativenumber!<CR>
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+map <C-n> :NERDTreeToggle<cr>
 
 "Reloads vim when there is a change in the vimrc file without having to reload
 augroup myvimrchooks
