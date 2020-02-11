@@ -8,4 +8,5 @@ call plug#begin('~/.vim/plugged')
 	Plug '907th/vim-auto-save'
 	Plug 'sickill/vim-monokai'
 	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'tpope/vim-fugitive'
 call plug#end()
