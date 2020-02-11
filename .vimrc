@@ -47,7 +47,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 map <C-n> :NERDTreeToggle<cr>
-
+nnoremap <Leader>f :NERDTreeToggle<Enter>
 "Reloads vim when there is a change in the vimrc file without having to reload
 augroup myvimrchooks
     au!
@@ -92,3 +92,7 @@ autocmd BufWinEnter * call PreventBuffersInNERDTree()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
