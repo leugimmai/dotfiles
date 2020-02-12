@@ -5,7 +5,6 @@ so ~/.vim/plugins.vim
 
 syntax on
 
-
 let mapleader = ","
 
 set nowrap        " don't wrap lines
@@ -64,48 +63,19 @@ augroup END
 
 set autochdir
 let NERDTreeChDirMode=2
-
-
-function! PreventBuffersInNERDTree()
-  if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree'
-    \ && exists('t:nerdtree_winnr') && bufwinnr('%') == t:nerdtree_winnr
-    \ && &buftype == '' && !exists('g:launching_fzf')
-    let bufnum = bufnr('%')
-    close
-    exe 'b ' . bufnum
-    call ToggleNerdTree()
-  endif
-endfunction
-
-
-function NotNerdTreePane()
-  return bufname('%') !~# 'NERD_tree_' && winnr("$") > 1 && strlen(expand('%')) > 0 && &modifiable && exists("g:NERDTree")
-endfunction
-
-function ToggleNerdTree()
-  if g:NERDTree.IsOpen()
-    :NERDTreeClose
-  else
-    :NERDTreeFind
-  endif
-endfunction
-
-autocmd BufEnter *  if (NotNerdTreePane() && g:NERDTree.IsOpen()) | NERDTreeFind | wincmd p | endif
-autocmd SessionLoadPost * if (NotNerdTreePane() && !g:NERDTree.IsOpen()) | NERDTreeFind | wincmd p | endif
-autocmd VimLeave * NERDTreeClose
-autocmd FileType nerdtree let t:nerdtree_winnr = bufwinnr('%')
-autocmd BufWinEnter * call PreventBuffersInNERDTree()
-
-"Open NERDTree if no files specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'node_modules/' ]
+let NERDTreeQuitOnOpen = 0
+let NERDTreeAutoDeleteBuffer = 1
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.vue,*.phtml,*.js,*.jsx,*.coffee,*.erb'
 
@@ -116,3 +86,15 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 noremap \ :Commentary<CR>
+
+
+"Split Pane settings
+
+set splitbelow
+set splitright
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
