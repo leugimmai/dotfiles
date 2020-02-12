@@ -14,5 +14,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'othree/yajs.vim'
 	Plug 'tpope/vim-endwise'
 	Plug 'alvan/vim-closetag'
+	Plug 'vim-ruby/vim-ruby'
+	Plug 'tpope/vim-rails'
+	Plug 'Shougo/neocomplete.vim'
+	Plug 'jremmen/vim-ripgrep'
 call plug#end()
 
