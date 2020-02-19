@@ -1,0 +1,16 @@
+function aws-rds-login(){
+	echo "Choose a environment to login to RDS and get password"
+	echo "\t[1] Test"
+	echo "\t[2] QA"
+	echo "\t[3] Prod"
+	
+	read value
+
+	case $value in
+		1) eval "ramsey rds login --profile dev/core-test --db-username marketing_tech_dev";;
+		2) eval "ramsey rds login --profile dev/core-qa --db-username marketing_tech_dev";;
+		3) eval "ramsey rds login --profile dev/core-prod --db-username marketing_tech_dev";;
+		*) echo "Invvalid Option";;
+	esac
+
+}
