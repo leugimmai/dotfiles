@@ -1,14 +1,14 @@
 function aws-role-login(){
 
     echo "Choose an AWS profile:"
-    echo "=== Test ===="
-    echo "\t[1] Marketing Tech Dev"
-    echo "\t[2] Glue"
-    echo "=== QA ======"
-    echo "\t[3] Marketin Tech Dev "
-    echo "=== Prod ===="
-    echo "\t[4] Marketing Tech Dev"
-    echo "\t[5] Glue"
+    echo "=== Test ==="
+    echo "[1] Marketing Tech Dev"
+    echo "[2] Glue"
+    echo "=== QA ==="
+    echo "[3] Marketin Tech Dev "
+    echo "=== Prod ==="
+    echo "[4] Marketing Tech Dev"
+    echo "[5] Glue"
     echo "\n"
     echo -n "Choose a profile: " 
     read value

@@ -1,8 +1,8 @@
 function aws-rds-login(){
 	echo "Choose a environment to login to RDS and get password"
-	echo "\t[1] Test"
-	echo "\t[2] QA"
-	echo "\t[3] Prod"
+	echo "[1] Test"
+	echo "[2] QA"
+	echo "[3] Prod"
 	
 	read value
 

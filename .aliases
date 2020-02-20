@@ -1,3 +1,5 @@
 alias ls="ls -l"
 
 alias c="clear"
+alias ctags="`brew --prefix`/bin/ctags"
+alias so="source ~/.zshrc"
