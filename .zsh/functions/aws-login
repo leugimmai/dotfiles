@@ -17,7 +17,7 @@ function aws-role-login(){
         1) eval "ramsey login --profile dev/core-test --save";;
         2) eval "ramsey login --profile glue_test --save";;
         3) eval "ramsey login --profile dev/core-qa --save";;
-        4) eval "ramsey login --profile de/core-prod --save";;
+        4) eval "ramsey login --profile dev/core-prod --save";;
         5) eval "ramsey login --profile glue_prod --save";;
         *) echo "Invalid Option";;
     esac
