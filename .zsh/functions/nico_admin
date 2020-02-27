@@ -1,4 +1,4 @@
 function nico_admin(){
-	cd Development/nicodemus-admin/scripts/dead-letter-queue
+	cd ~/Development/nicodemus-admin/scripts/dead-letter-queue
 	bundle exec prod/queue_manager.rb
 }
