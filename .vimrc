@@ -33,6 +33,9 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set ma
 set mouse=a
+set relativenumber
+map <leader>t :vert terminal<CR>
+map <leader>h :noh<CR>
 
 filetype plugin indent on
 filetype on
@@ -97,4 +100,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" https://www.sitepoint.com/effective-rails-development-vim/
+set tags=./tags;
+
 
