@@ -2,7 +2,7 @@
 for function in ~/.zsh/functions/*; do
   source $function
 done
-
+ZSH_DISABLE_COMPFIX=true
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
@@ -46,5 +46,6 @@ _load_settings "$HOME/.zsh/configs"
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+export TERM=xterm-256color
