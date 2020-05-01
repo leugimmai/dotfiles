@@ -14,11 +14,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'othree/yajs.vim'
 	Plug 'tpope/vim-endwise'
 	Plug 'alvan/vim-closetag'
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 	Plug 'tpope/vim-rails'
 	Plug 'slim-template/vim-slim'
 	Plug 'dense-analysis/ale'
 	Plug 'vim-ruby/vim-ruby'
 	Plug 'jremmen/vim-ripgrep'
+    Plug 'vim-scripts/indentpython.vim'
+    Plug 'valloric/youcompleteme'
+    Plug 'tmhedberg/SimpylFold'
 call plug#end()
 

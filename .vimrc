@@ -29,6 +29,13 @@ set mouse=a
 set splitbelow
 set splitright
 
+" Use system clipboard
+set clipboard=unnamed
+
+set foldmethod=indent
+set foldlevel=99
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,6 +149,8 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap line
 
+" Enable folding with spacebar
+nnoremap <space> za
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
@@ -206,8 +215,6 @@ au FileType python syn keyword pythonDecorator True None False self
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
 
-au FileType python map <buffer> F :set foldmethod=indent<cr>
-
 au FileType python inoremap <buffer> $r return
 au FileType python inoremap <buffer> $i import
 au FileType python inoremap <buffer> $p print
@@ -216,7 +223,6 @@ au FileType python map <buffer> <leader>1 /class
 au FileType python map <buffer> <leader>2 /def
 au FileType python map <buffer> <leader>C ?class
 au FileType python map <buffer> <leader>D ?def
-
 
 """"""""""""""""""""""""""""""
 " => Shell section
@@ -264,6 +270,12 @@ endfunction
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
 """"""""""""""""""""""""""""""
 " => Plugins section
 """"""""""""""""""""""""""""""
@@ -288,6 +300,12 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
 autocmd BufReadPre,FileReadPre * :NERDTreeClose
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
