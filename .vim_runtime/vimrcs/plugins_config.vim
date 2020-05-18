@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-ruby/vim-ruby'
     Plug 'vim-scripts/indentpython.vim'
     Plug 'vim-scripts/mru.vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 
