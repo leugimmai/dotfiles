@@ -171,10 +171,11 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+set nowrap "Do Not Wrap lines
 
+set formatoptions-=t " do not wautomatically wrap text when typing
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
