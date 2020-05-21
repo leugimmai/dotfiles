@@ -26,6 +26,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 set foldlevelstart=10
 
 set mouse=a
+set number
 set relativenumber
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,7 +116,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme Tomorrow-Night
+    colorscheme Tomorrow-Night-Eighties
 catch
 endtry
 

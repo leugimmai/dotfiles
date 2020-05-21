@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-scripts/mru.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mattn/emmet-vim'
+    Plug 'thoughtbot/vim-rspec'
 call plug#end()
 
 
@@ -70,7 +71,7 @@ map <leader>j :CtrlP<cr>
 map <C-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|\tmp\'
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|tmp\'
 
 
 """"""""""""""""""""""""""""""
@@ -109,14 +110,6 @@ let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize=20
 
 autocmd BufReadPre,FileReadPre * :NERDTreeClose
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
@@ -248,3 +241,12 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Rspec
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command = "!bundle exec rspec --color {spec}"
