@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mattn/emmet-vim'
     Plug 'thoughtbot/vim-rspec'
+    Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 
@@ -250,3 +251,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "!bundle exec rspec --color {spec}"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Easy Motion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
