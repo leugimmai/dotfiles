@@ -34,6 +34,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'thoughtbot/vim-rspec'
     Plug 'easymotion/vim-easymotion'
     Plug 'shinchu/lightline-gruvbox.vim'
+    Plug 'morhetz/gruvbox'
 call plug#end()
 
 
