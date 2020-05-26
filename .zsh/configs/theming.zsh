@@ -1,3 +1,3 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.zsh/configs/.p10k.zsh ]] || source ~/.zsh/configs/.p10k.zsh

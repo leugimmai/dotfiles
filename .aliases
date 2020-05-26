@@ -6,3 +6,5 @@ alias so="source ~/.zshrc"
 alias x="exit"
 
 alias mps-local-db="psql -h localhost -p 5432 -U marketing-preference-system -d marketing_preference_system_dev -W PASSWORD"
+alias rails="bundle exec rails"
+alias rspec="bundle exec rspec"
