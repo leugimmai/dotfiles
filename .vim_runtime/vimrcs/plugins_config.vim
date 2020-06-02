@@ -36,6 +36,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'morhetz/gruvbox'
 Plug 'chiel92/vim-autoformat'
+Plug 'lucapette/vim-ruby-doc'
 call plug#end()
 
 
@@ -232,8 +233,6 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -312,3 +311,7 @@ map <leader>p :cp<cr>
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim Ruby Doc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ruby_doc_command='open'
