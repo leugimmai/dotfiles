@@ -43,3 +43,5 @@ _load_settings "$HOME/.zsh/configs"
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
