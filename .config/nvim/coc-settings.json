@@ -1,0 +1,5 @@
+{
+    "python.jediEnabled":false,
+    "python.linting.pylintPath": "/usr/local/bin/pylint",
+    "python.linting.pylintArgs": ["--disable=import-error", "--disable=missing-docstring", "--disable=relative-import", "--disable=ungrouped-imports"]
+}
