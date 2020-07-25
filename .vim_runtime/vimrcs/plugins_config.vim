@@ -4,7 +4,6 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
-Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'alvan/vim-closetag'
@@ -37,6 +36,8 @@ Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'morhetz/gruvbox'
 Plug 'chiel92/vim-autoformat'
 Plug 'lucapette/vim-ruby-doc'
+Plug 'arcticicestudio/nord-vim'
+Plug 'frazrepo/vim-rainbow'
 call plug#end()
 
 
@@ -321,3 +322,6 @@ let g:ruby_doc_command='open'
 " => Autoformat
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <F3> :Autoformat<CR>
+
+let g:rainbow_active = 1
+
