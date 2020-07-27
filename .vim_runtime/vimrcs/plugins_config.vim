@@ -10,8 +10,6 @@ Plug 'alvan/vim-closetag'
 Plug 'kien/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
-Plug 'maximbaz/lightline-ale'
-Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'amix/open_file_under_cursor.vim'
 Plug 'godlygeek/tabular'
@@ -32,11 +30,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'easymotion/vim-easymotion'
-Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'morhetz/gruvbox'
 Plug 'chiel92/vim-autoformat'
 Plug 'lucapette/vim-ruby-doc'
-Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
 call plug#end()
 
 
@@ -145,69 +143,12 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => lightline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lightline = {
-            \ 'colorscheme': 'wombat',
-            \ 'active': {
-            \   'left': [ ['mode', 'paste'],
-            \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-            \   'right': [ [ 'lineinfo' ], ['percent'] ]
-            \ },
-            \ 'component': {
-            \  'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-            \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
-            \ },
-            \ 'component_visible_condition': {
-            \   'readonly': '(&filetype!="help"&& &readonly)',
-            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-            \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-            \ },
-            \ 'component_function': {
-            \   'fileformat': 'LightlineFileformat',
-            \   'filetype': 'LightlineFiletype'
-            \ },
-            \ 'separator': { 'left': ' ', 'right': ' ' },
-            \ 'subseparator': { 'left': ' ', 'right': ' ' }
-            \ }
-
-let g:lightline.colorscheme = 'gruvbox'
-
-function! LightlineFileformat()
-    return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! LightlineFiletype()
-    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:goyo_width=100
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 nnoremap <silent> <leader>z :Goyo<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ale (syntax checker and linter)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_linters = {
-            \   'javascript': ['jshint'],
-            \   'python': ['flake8'],
-            \   'go': ['go', 'golint', 'errcheck']
-            \}
-
-nmap <silent> <leader>a <Plug>(ale_next_wrap)
-
-" Disabling highlighting
-let g:ale_set_highlights = 0
-
-" Only run linting when saving the file
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -310,17 +251,20 @@ map <leader>p :cp<cr>
 " Make sure that enter is never overriden in the quickfix window
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim ruby doc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ruby_doc_command='open'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Autoformat
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <F3> :Autoformat<CR>
 
-let g:rainbow_active = 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => LightLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
