@@ -37,7 +37,6 @@ Plug 'morhetz/gruvbox'
 Plug 'chiel92/vim-autoformat'
 Plug 'lucapette/vim-ruby-doc'
 Plug 'arcticicestudio/nord-vim'
-Plug 'frazrepo/vim-rainbow'
 call plug#end()
 
 
