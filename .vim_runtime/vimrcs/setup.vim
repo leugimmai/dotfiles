@@ -28,6 +28,7 @@ set foldlevelstart=10
 set mouse=a
 set number
 set relativenumber
+set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -120,7 +121,11 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-colorscheme gruvbox
+if !has('gui_running')
+  set t_Co=256
+endif
+
+autocmd vimenter * colorscheme gruvbox
 
 set background=dark
 
@@ -276,10 +281,7 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
-
+autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
