@@ -9,31 +9,11 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
+
+
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
-au FileType javascript setl nocindent
-
-au FileType javascript imap <C-t> $log();<esc>hi
-au FileType javascript imap <C-a> alert();<esc>hi
-
-au FileType javascript inoremap <buffer> $r return 
-au FileType javascript inoremap <buffer> $f // --- PH<esc>FP2xi
-
-function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-
-
 """"""""""""""""""""""""""""""
 " => Shell section
 """"""""""""""""""""""""""""""
@@ -56,6 +36,8 @@ let vim_markdown_folding_disabled = 1
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 
+" Ctrl-P while in Insert mode adds binding.pry
+au FileType ruby imap <C-p> binding.pry<esc>hi
 
 au BufNewFile,BufRead *.js,*.html,*.css set tabstop=2
 au BufNewFile,BufRead *.js,*.html,*.css set softtabstop=2
