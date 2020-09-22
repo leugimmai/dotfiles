@@ -10,10 +10,13 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
 
+au FileType python imap <C-p> breakpoint()<esc>hi
+
 
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
+au FileType javascript imap <C-p> console.log()<esc>hi
 """"""""""""""""""""""""""""""
 " => Shell section
 """"""""""""""""""""""""""""""
