@@ -35,6 +35,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'luochen1990/rainbow'
+Plug 'sheerun/vim-polyglot'
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
@@ -211,7 +215,6 @@ let g:ruby_doc_command='open'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <F3> :Autoformat<CR>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => LightLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -228,3 +231,8 @@ map <leader>j :Files<cr>
 map <leader>g :Rg<cr>
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim Rainbow
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:rainbow_active = 1
