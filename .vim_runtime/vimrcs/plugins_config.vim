@@ -200,10 +200,10 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Rspec
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+au FileType ruby map <Leader>t :call RunCurrentSpecFile()<CR>
+au FileType ruby map <Leader>s :call RunNearestSpec()<CR>
+au FileType ruby map <Leader>l :call RunLastSpec()<CR>
+au FileType ruby map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "!bundle exec rspec --color {spec}"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -231,6 +231,8 @@ let g:lightline.colorscheme = 'gruvbox'
 map <leader>j :Files<cr>
 map <leader>g :Rg<cr>
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Rainbow
