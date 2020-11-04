@@ -14,3 +14,15 @@ export EDITOR=vim
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
+
+export FZF_DEFAULT_OPTS="
+--layout=reverse
+--info=inline
+--height=80%
+--preview-window=:hidden
+--bind '?:toggle-preview'
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
+--bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+--bind 'ctrl-v:execute(code {+})'
+"
