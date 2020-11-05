@@ -6,6 +6,7 @@ plugins=(
         zsh-syntax-highlighting
 		vscode
         asdf
+		vi-mode
 )
 
 # FZF and RipGrep Setup: https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
