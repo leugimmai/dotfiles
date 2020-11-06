@@ -481,3 +481,4 @@ let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
