@@ -167,6 +167,11 @@ set nowrap "Do Not Wrap lines
 
 set formatoptions-=t " do not wautomatically wrap text when typing
 
+" replace word directly under cursor while in normal
+:nnoremap <Leader>r :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+" replace visual selection match. Could be multiple words
+vnoremap <Leader>r "hy:%s/<C-r>h//gc<left><left><left>
+
 """""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
