@@ -470,6 +470,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'sheerun/vim-polyglot'
     Plug 'jaxbot/semantic-highlight.vim'
     Plug 'airblade/vim-gitgutter'
+    Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
@@ -639,3 +640,23 @@ let $FZF_DEFAULT_OPTS='--reverse'
 " => Vim Rainbow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rainbow_active = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Float Term
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>ng :FloatermNew! --name=lazygit --title=lazygit lazygit<cr>
+map <leader>nt :FloatermNew! --name=todo --title=todo vi ~/todos.md<cr>
+map <leader>nf :FloatermNew! <cr>
+let g:floaterm_autoclose = 2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Todo Search Start
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+command! -bang -nargs=* Todos
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --passthru "" $TODOS'.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+nmap <Leader>no :Todos<CR>
