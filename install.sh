@@ -11,7 +11,7 @@ dotfiles_dir=${homedir}/development/dotfiles
 
 # change to the dotfiles directory
 echo "Changing to the ${dotfiledir} directory"
-cd ${dotfiledir}
+# cd ${dotfiledir}
 
 
 dotfiles=".aliases .exports .gitignore_global .tmux.conf .zshrc"
@@ -22,7 +22,7 @@ dotfiles=".aliases .exports .gitignore_global .tmux.conf .zshrc"
 # done
 
 # Run the HomeBrew Script
-# ./install/brew.sh
+./install/brew.sh
 
 # Run Oh My ZSH Script
 # ./install/oh-my-zsh.sh
